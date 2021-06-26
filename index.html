@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="student_util.js"></script>
+</head>
+<body>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large red modal-trigger" id="fab" href="#addStudentModal">
+            <i class="large material-icons">add</i>
+            Add Student
+        </a>
+    </div>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Students Manager</a>
+        </div>
+    </nav>
+    <div class="search">
+        <div class="row">
+            <div class="input-field col s8 offset-s1">
+                <input type="text" id="searchBar">
+                <label for="" id="label">
+                    <i class="material-icons left">search</i>
+                    Search by name
+                </label>
+            </div>
+            <button class="btn col s2 blue" id="search" style="height:3rem;margin-top:15px;">
+                Search
+                <i class="material-icons left">search</i>
+            </button>
+        </div>
+    </div>
+    <div id="noStudents" class="hide">
+        <h2 class="center-align">No Students found. You might want to add students from the Floating Action Button</h2>
+    </div>
+    <div id="studentsList">
+
+        <table class="striped centered highlight">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Roll Number</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="studentsTableBody"\>
+            </table>
+            
+        </div>
+        
+        <div id="addStudentModal" class="modal">
+            <div class="modal-content">
+                <h4>Add Student</h4>
+                <form id="addForm">
+                    <div class="input-field" id="nameInput">
+                        <input name="student_name" id="student_name" type="text" class="validate" required>
+                        <label for="student_name">Student Name</label>
+                        <span class="helper-text" data-error="Invalid Name"></span>
+                    </div>
+                    
+                    <div class="input-field" id="rollInput">
+                        <input name="student_roll" id="student_roll" type="text" class="validate" required pattern="^[0-9]+$">
+                        <label for="student_roll">Roll Number</label>
+                        <span class="helper-text" data-error="Invalid Roll Number"></span>
+                    </div>
+                    
+                    <div class="input-field" id="nameInput">
+                        <input name="student_age" id="student_age" type="text" class="validate" required pattern="^[1-9][0-9]?$">
+                        <label for="student_age">Age</label>
+                        <span class="helper-text" data-error="Invalid Age"></span>
+                    </div>
+                    
+                    <div class="input-field">
+                        <select name="gender">
+                            <option value="Male" selected>Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <label>Gender</label>
+                    </div>
+                    
+                    
+                    <a href="#!" class="waves-effect waves-green btn right" id="addBtn">
+                        Add Student
+                        <i class="material-icons right">send</i>
+                    </a>
+                </form>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </body>
+    </html>
