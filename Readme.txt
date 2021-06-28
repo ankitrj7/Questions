@@ -1,5 +1,5 @@
 For problem statement 1 :-
-Code is written in python with output
+Code is written in python3 with input and output
 
 For problem statement 2:-
 Code is written in C++ with input and output
